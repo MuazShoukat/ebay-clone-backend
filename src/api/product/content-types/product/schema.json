@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "Size": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "Price": {
+      "type": "decimal",
+      "min": 0,
+      "required": true
+    },
+    "ShippingPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "Identity": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "DiscountedPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "Stock": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "BrandNew": {
+      "type": "boolean",
+      "required": true
+    },
+    "Reviews": {
+      "type": "integer",
+      "min": 0
+    },
+    "Rating": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "Sponsered": {
+      "type": "boolean",
+      "required": true
+    },
+    "Seller": {
+      "type": "string",
+      "required": true
+    },
+    "Color": {
+      "displayName": "Color_List",
+      "type": "component",
+      "repeatable": true,
+      "component": "array.color-list",
+      "required": true
+    },
+    "Country": {
+      "type": "enumeration",
+      "enum": [
+        "Pakistan"
+      ],
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    }
+  }
+}

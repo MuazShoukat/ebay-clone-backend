@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_array_color_lists",
+  "info": {
+    "displayName": "Color_List",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

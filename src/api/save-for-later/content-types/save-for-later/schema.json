@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "save_for_laters",
+  "info": {
+    "singularName": "save-for-later",
+    "pluralName": "save-for-laters",
+    "displayName": "SaveForLater"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "save_for_laters"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "Quantity": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  }
+}
